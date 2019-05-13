@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import NavBar from './component/NavBar/NavBar'
 import Login from './component/Login/Login'
 import ShowUser from './component/ShowUser/ShowUser'
+import ShowMarvel from './component/ShowMarvel/ShowMarvel'
 
 import * as routes from './constants/routes'
 import './App.css';
@@ -28,7 +29,7 @@ class App extends Component {
         <NavBar currentUser={this.state.currentUser}/>
         <Switch>
           <Route exact path={routes.ROOT} render={() => <div>ROOT</div>} />
-          <Route exact path={routes.HOME} render={() => <div>HOME</div>} />
+          <Route exact path={routes.HOME} render={() => <ShowMarvel/>} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser />} />
           <Route exact path={routes.POSTS} render={() => <div>POST</div>} />
