@@ -10,10 +10,12 @@ const MarvelList = (props) => {
         )
     })
     return(
-        <ul>
-            {characterList}
-        </ul>
+       <div>
+           
+       </div>
     )
 }
-
+// <ul>
+//{characterList}
+//</ul>
 export default MarvelList

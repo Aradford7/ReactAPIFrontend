@@ -33,12 +33,13 @@ class ShowMarvel extends Component {
 }
   render(){
       return (
-          <div>
-              <MarvelList characters={this.state.characters}/>
-          </div>
-      )
+      <div>
+          
+      </div>)
 
   }
 }
+
+//<div><MarvelList characters={this.state.characters}/></div>
 
 export default withRouter(ShowMarvel)
