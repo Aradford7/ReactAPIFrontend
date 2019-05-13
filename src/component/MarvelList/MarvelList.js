@@ -2,20 +2,23 @@ import React from 'react';
 //import React, { Component } from 'react';
 //import { withRouter } from 'react-router-dom'
 const MarvelList = (props) => {
-    const characterList = props.data.results.map((data) => {
+    const characterList = props.data.results.map(() => {
         return(
-            <li key = {this.props.data.results}>
-            <span>{this.props.data.results.name}</span>
-            </li>
+            <div>
+                {characterList}
+            </div>    
         )
     })
     return(
        <div>
-           
+
        </div>
     )
 }
+/* <li key = {this.props.data.results}>
+            <span>{this.props.data.results.name}</span>
 // <ul>
-//{characterList}
-//</ul>
+//
+</li>
+//</ul> */
 export default MarvelList

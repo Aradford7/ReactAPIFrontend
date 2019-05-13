@@ -11,19 +11,23 @@ import './App.css';
 
 class App extends Component {
   state = {
-    currentUser: null
+    currentUser: null,
+    chars: []
   }
 
   doSetCurrentUser = user =>
     this.setState({
-      currentUser: user
+      currentUser: user,
     })
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    const people = await fetch('/api/v1')
+    const jsonPeople = await people.json()
+    this.setState({chars: jsonPeople.char})
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <NavBar currentUser={this.state.currentUser}/>
@@ -36,6 +40,11 @@ class App extends Component {
           <Route exact path={routes.LOGIN} render={() => <Login currentUser={this.state.currentUser} doSetCurrentUser={this.doSetCurrentUser}/>} />
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>
+        {
+          this.state.chars.map(c =>
+            <div>{c.name}</div>
+          )
+        }
       </div>
     );
   }
