@@ -39,7 +39,7 @@ class MarvelList extends React.Component {
            <div>
                {this.state.showCharacter
                ?
-               (
+               (    
                     this.state.comics.map((c, i)=>{
                         return(
                             <div>
