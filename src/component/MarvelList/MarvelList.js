@@ -1,24 +1,66 @@
 import React from 'react';
 //import React, { Component } from 'react';
 //import { withRouter } from 'react-router-dom'
-const MarvelList = (props) => {
-    const characterList = props.data.results.map(() => {
-        return(
-            <div>
-                {characterList}
-            </div>    
-        )
-    })
-    return(
-       <div>
+class MarvelList extends React.Component {
+  
+    state={
+        showCharacter: false,
+        character:"",
+        comics:[]
+    }
 
-       </div>
-    )
+    getCharacter = async(id, name)=>{
+        try{
+            const character = await fetch(`/api/v1/character/${id}`);
+            const parsedChar = await character.json();
+            if (parsedChar.success){
+                this.setState({
+                    showCharacter: true,
+                    character: name,
+                    comics: parsedChar.comics
+                })
+            }
+
+        }catch(err){
+            console.log(err)
+        }
+
+    }
+
+    imageHandler = (obj) =>{
+        const pic = obj.path + "." + obj.extension
+        return (pic)
+    }
+    
+    
+
+    render(){
+        return(
+           <div>
+               {this.state.showCharacter
+               ?
+               (
+                    this.state.comics.map((c, i)=>{
+                        return(
+                            <div>
+                                <h1>{c.title}</h1>
+                                <img src={this.imageHandler(c.images[0])}/>
+                            </div>
+                        )
+                    })
+               )
+               :(
+                   <div>
+                        {this.props.characters.map((c, i) => {
+                                return (
+                                    <div key={i} onClick={()=>{this.getCharacter(c.id)}}>{c.name}</div>
+                                )       
+                        })}
+                    </div>
+               )
+            }
+           </div>
+        )
+    }
 }
-/* <li key = {this.props.data.results}>
-            <span>{this.props.data.results.name}</span>
-// <ul>
-//
-</li>
-//</ul> */
 export default MarvelList
