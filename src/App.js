@@ -21,7 +21,7 @@ class App extends Component {
     })
 
   async componentDidMount() {
-    const people = await fetch('/api/v1/deadpool')
+    const people = await fetch('/api/v1/iron_man')
     const jsonPeople = await people.json()
     this.setState({char: jsonPeople.char})
   }

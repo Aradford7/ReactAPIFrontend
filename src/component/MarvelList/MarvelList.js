@@ -45,6 +45,7 @@ class MarvelList extends React.Component {
                             <div>
                                 <h1>{c.title}</h1>
                                 <img src={this.imageHandler(c.images[0])}/>
+                                <button>Add</button>
                             </div>
                         )
                     })
