@@ -31,10 +31,12 @@ class ShowMarvel extends Component {
        console.log(err);
    }
 }
-  render(){
+  render(
+    
+  ){
       return (
       <div>
-        <div><MarvelList characters={this.state.characters}/></div>
+        <div><MarvelList characters={this.state.characters}/> </div>
       </div>)
 
   }

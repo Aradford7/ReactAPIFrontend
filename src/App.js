@@ -12,7 +12,7 @@ import './App.css';
 class App extends Component {
   state = {
     currentUser: null,
-    chars: []
+    char: []
   }
 
   doSetCurrentUser = user =>
@@ -23,7 +23,7 @@ class App extends Component {
   async componentDidMount() {
     const people = await fetch('/api/v1')
     const jsonPeople = await people.json()
-    this.setState({chars: jsonPeople.char})
+    this.setState({char: jsonPeople.char})
   }
 
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>
         {
-          this.state.chars.map(c =>
+          this.state.char.map(c =>
             <div>{c.name}</div>
           )
         }
