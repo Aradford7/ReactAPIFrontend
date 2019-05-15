@@ -21,7 +21,7 @@ class Login extends Component {
             credentials: 'include',
             body: JSON.stringify(this.state),
             headers:{
-                "Content-type" : 'application/json'
+                "Content-Type" : 'application/json'
             }
         })
 
@@ -29,17 +29,22 @@ class Login extends Component {
         if(parsedResponse.success) {
           this.props.doSetCurrentUser(parsedResponse.user)
             this.setState({
-                logged: false,
+                logged: true,
+            })
+        }else{
+            this.setState({
+                message: "try again"
             })
         }
     }
 
     render() {
+        console.log(this.state.logged)
       const { username, password } = this.state
       return (
         this.state.logged
         ? <Redirect to={`/users/${this.props.currentUser._id}`} />
-        : <form onSubmit={this.onSubmit}>
+        : <form onSubmit={e => this.onSubmit(e)}>
             <input type="text" name="username" value={username} onChange={this.changeHandler} />
             <input type="password" name="password" value={password} onChange={this.changeHandler} />
             <button type='submit'>Submit</button>

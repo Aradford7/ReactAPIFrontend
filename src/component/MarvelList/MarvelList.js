@@ -1,12 +1,13 @@
 import React from 'react';
 //import React, { Component } from 'react';
-//import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 class MarvelList extends React.Component {
   
     state={
         showCharacter: false,
         character:"",
-        comics:[]
+        comics:[],
+        search:''
     }
 
     getCharacter = async(id, name)=>{
@@ -51,13 +52,13 @@ class MarvelList extends React.Component {
                     })
                )
                :(
-                   <div>
+                   <ul>
                         {this.props.characters.map((c, i) => {
                                 return (
-                                    <div key={i} onClick={()=>{this.getCharacter(c.id)}}>{c.name}</div>
+                                    <li><Link to={`/character/${c.id}`}>{c.name}</Link></li>
                                 )       
                         })}
-                    </div>
+                    </ul>
                )
             }
            </div>

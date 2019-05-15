@@ -9,6 +9,8 @@ class ShowMarvel extends Component {
       super();
       this.state = {
           results: [],
+          character:"",
+          comics:[],
       
     }
   }
@@ -34,34 +36,36 @@ class ShowMarvel extends Component {
 // }
 //    <SearchName getCharacter={this.state.getCharacter}/>
 
-  getCharacter = async(id, name)=>{
-    try{
-        console.log('id', id)
-        const character = await fetch(`/api/v1/character/${id}`);
-        const parsedChar = await character.json();
-        console.log('parsedChar', parsedChar)
-        if (parsedChar.success){
-            this.setState({
-                showCharacter: true,
-                character: name,
-                comics: parsedChar.comics
-            })
-        }
+  // getCharacter = async(id, name)=>{
+  //   try{
+  //       console.log('id', id)
+  //       const character = await fetch(`/api/v1/${id}`);
+  //       const parsedChar = await character.json();
+  //       console.log('parsedChar', parsedChar)
+  //       if (parsedChar.success){
+  //         console.log('success')  
+  //         this.setState({
+  //               results:parsedChar,
+  //               showCharacter: true,
+  //               character: name,
+  //               comics: parsedChar.comics
+  //           })
+  //       }console.log(this.state.results,'=====char')
 
-    }catch(err){
-      console.log('get character');
+  //   }catch(err){
+  //     console.log('get character');
       
-        console.log(err)
-    }
+  //       console.log(err)
+  //   }
 
-  }
+  // }
 
   render(){
     console.log(this.props)
       return (
       <div>
         <div>
-          <SearchName getCharacter={this.getCharacter}/>
+          <SearchName getCharacter={this.props.search} />
           <MarvelList characters={this.props.characters}/>
          </div>
       </div>)

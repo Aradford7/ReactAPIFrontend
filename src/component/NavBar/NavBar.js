@@ -14,7 +14,9 @@ const NavBar = ({currentUser}) =>
     {
       currentUser
         ? <span>hello {currentUser.username}</span>
-        :  <NavLink to={'/login'} activeClassName="selected">login </NavLink>
+        :  
+          [<NavLink  key = {1} to={routes.REGISTER} activeClassName="selected">REGISTER </NavLink>,
+          <NavLink key = {2} to={'/login'} activeClassName="selected">LOGIN </NavLink>]
     }
   </div>
 

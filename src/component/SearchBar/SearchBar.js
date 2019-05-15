@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 
 class SearchName extends Component{
     state = {
-        char: 'spider-man'
+        char: 'spider-man',
+        search:''
         
     }
     handleChange = (e) => {
