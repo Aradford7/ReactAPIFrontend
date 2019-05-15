@@ -29,7 +29,7 @@ class Login extends Component {
         if(parsedResponse.success) {
           this.props.doSetCurrentUser(parsedResponse.user)
             this.setState({
-                logged: true,
+                logged: false,
             })
         }
     }

@@ -33,11 +33,35 @@ class ShowMarvel extends Component {
 //    }
 // }
 //    <SearchName getCharacter={this.state.getCharacter}/>
+
+  getCharacter = async(id, name)=>{
+    try{
+        console.log('id', id)
+        const character = await fetch(`/api/v1/character/${id}`);
+        const parsedChar = await character.json();
+        console.log('parsedChar', parsedChar)
+        if (parsedChar.success){
+            this.setState({
+                showCharacter: true,
+                character: name,
+                comics: parsedChar.comics
+            })
+        }
+
+    }catch(err){
+      console.log('get character');
+      
+        console.log(err)
+    }
+
+  }
+
   render(){
     console.log(this.props)
       return (
       <div>
         <div>
+          <SearchName getCharacter={this.getCharacter}/>
           <MarvelList characters={this.props.characters}/>
          </div>
       </div>)
