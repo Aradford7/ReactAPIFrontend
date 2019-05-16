@@ -55,11 +55,36 @@ class Register extends Component {
 
 const RegisterForm = ({changeHandler, onSubmit, username, password}) =>
     <form onSubmit = {e => onSubmit(e)}>
-    <label htmlfor="username">Username</label>
-    <input onChange = {e => changeHandler(e)}type = "text" name = "username" value = {username}/>
-    <label htmlfor="password">Password</label>
-    <input onChange = {e => changeHandler(e)} type = "password" name = "password"  value = {password}/>
-    <button type = 'submit'>SUBMIT</button>
-</form>
+        <div class = "container">
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input onChange = {e => changeHandler(e)} type = "username" name = "username" value = {username} class="input"  placeholder="Username"/>
+                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                        <span class="icon is-small is-right"><i class="fas fa-check"></i></span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input onChange = {e => changeHandler(e)} type = "password" name = "password"  value = {password} class="input" placeholder="Password"/>
+                        <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button  type = "submit" class="button is-success">Login</button>
+                </p>
+            </div>
+        </div>
+    </form>
+
+
+
+
 
 export default Register
+
+{/* <label htmlfor="username">Username</label>
+<input onChange = {e => changeHandler(e)}type = "text" name = "username" value = {username}/>
+<label htmlfor="password">Password</label>
+<input onChange = {e => changeHandler(e)} type = "password" name = "password"  value = {password}/>
+<button type = 'submit'>SUBMIT</button> */}
