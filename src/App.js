@@ -35,6 +35,29 @@ class App extends Component {
     this.setState({char: jsonPeople.char})
   }
 
+  addCharacter = async comic => {
+    const comicObj = {
+        title: comic.title,
+        id: comic.id
+        
+    }
+    const addedCharacter = await fetch(`/users/${this.state.currentUser._id}/comic`, {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(comicObj),
+        headers:{
+            "Content-Type" : 'application/json'
+        }
+    });
+
+    const addedCharacterJson = await addedCharacter.json()
+    this.setState({
+      currentUser: addedCharacterJson.user
+    })
+}
+
+delete
+
   render() {
     console.log(this.state.currentUser)
     return (
@@ -43,7 +66,7 @@ class App extends Component {
         <Switch>
           <Route exact path={routes.ROOT} render={(props) => <ShowMarvel props={props} characters={this.state.char} search={this.getChar}/>} />
           <Route exact path={routes.HOME} render={() => <div>HOME</div>}/>
-          <Route exact path={`/character/:id`} render={() => <ShowCharacter currentUser={this.state.currentUser}/>} />
+          <Route exact path={`/character/:id`} render={() => <ShowCharacter currentUser={this.state.currentUser} addCharacter={this.addCharacter}/>} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser />} />
           <Route exact path={routes.POSTS} render={() => <CreateFavorite currentUser={this.state.currentUser}/>} />

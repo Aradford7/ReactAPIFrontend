@@ -73,15 +73,6 @@ class ShowMarvel extends Component {
   }
 }
 
-///  <Card style = {{width: '18rem'}}>
-{/* <Card.Img variant = "top" src = "MarvelList.js/100px180"/>
-<Card.Body>
-  <Card.Title>{c.title}</Card.Title>
-  <Card.Text>
-      <MarvelList characters={this.props.characters}/>
-  </Card.Text>
-<Button variant = "view">View</Button>
-</Card.Body>
-</Card> */}
+
 
 export default withRouter(ShowMarvel)

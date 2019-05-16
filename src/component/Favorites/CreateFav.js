@@ -4,18 +4,6 @@ import { withRouter } from 'react-router-dom'
 class CreateFavorite extends Component{
     constructor(){
         super();
-
-        this.state = {
-            user:{},
-            comic:[{
-                id: Number,
-                name: String,
-                description: String,
-                resourceURI: String,
-                thumbnail: {
-                path: String,
-                extension: String}}],
-        }
     }
     updateFavorites = (e) => {
         this.setState({[e.currentTarget.name]:e.currentTarget.value})
@@ -27,7 +15,12 @@ console.log(this.props.favorite)
             <div>
               
               Favorite Comics:
-            {this.state.user.favorite}
+            {this.props.currentUser.favorite.map((f, i)=>{
+                return (
+                    <h1>{f.title}</h1>
+
+                )
+            })}
             </div>
         )
     }

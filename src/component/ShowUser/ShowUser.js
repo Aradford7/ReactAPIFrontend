@@ -30,7 +30,7 @@ class ShowUser extends Component {
     return (
       <div>
         <h1>Welcome Back {this.state.user.username}!</h1>
-       
+        <button>Browse</button>
         
       </div>
     )

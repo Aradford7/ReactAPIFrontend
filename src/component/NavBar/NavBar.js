@@ -5,19 +5,22 @@ import * as routes from '../../constants/routes'
 import './NavBar.css'
 
 const NavBar = ({currentUser}) =>
-  <div>
-    <h5>NAVBAR</h5>
-    <NavLink exact activeClassName="selected" to={routes.ROOT}>ROOT</NavLink>
-    <NavLink to={routes.HOME} activeClassName="selected">HOME </NavLink>
-    <NavLink to={routes.USERS} activeClassName="selected">USERS </NavLink>
-    <NavLink to={routes.POSTS} activeClassName="selected">POSTS </NavLink>
+  <div class = "navbar">
+    <div class='navbar-menu'>
+      <div class = 'navbar-end'>
+    <NavLink exact activeClassName="selected"class ="nav-item" to={routes.ROOT}>HOME</NavLink>
+    <NavLink to={routes.USERS} activeClassName="selected"class ="nav-item">USERS</NavLink>
+    <NavLink to={routes.POSTS} activeClassName="selected"class ="nav-item">POSTS </NavLink>
     {
       currentUser
         ? <span>Welcome {currentUser.username}</span>
         :  
-          [<NavLink  key = {1} to={routes.REGISTER} activeClassName="selected">REGISTER </NavLink>,
-          <NavLink key = {2} to={'/login'} activeClassName="selected">LOGIN </NavLink>]
+          [<NavLink  class ="nav-item"key = {1} to={routes.REGISTER} activeClassName="selected">REGISTER </NavLink>,
+          <NavLink class ="nav-item" key = {2} to={'/login'} activeClassName="selected">LOGIN </NavLink>]
     }
+    </div>
   </div>
-
+</div>
 export default NavBar
+
+// <NavLink to={routes.HOME} activeClassName="selected">HOME </NavLink>

@@ -28,24 +28,24 @@ class ShowCharacter extends Component {
 
     }
 
-    addCharacter = async comic => {
-        const comicObj = {
-            title: comic.title,
-            id: comic.id
+    // addCharacter = async comic => {
+    //     const comicObj = {
+    //         title: comic.title,
+    //         id: comic.id
             
-        }
-        const addedCharacter = await fetch(`/users/${this.props.currentUser._id}/comic`, {
-            method: 'POST',
-            credentials: 'include',
-            body: JSON.stringify(comicObj),
-            headers:{
-                "Content-Type" : 'application/json'
-            }
-        });
+    //     }
+    //     const addedCharacter = await fetch(`/users/${this.props.currentUser._id}/comic`, {
+    //         method: 'POST',
+    //         credentials: 'include',
+    //         body: JSON.stringify(comicObj),
+    //         headers:{
+    //             "Content-Type" : 'application/json'
+    //         }
+    //     });
 
-        const addedCharacterJson = await addedCharacter.json()
-        console.log(addedCharacterJson)
-    }
+    //     const addedCharacterJson = await addedCharacter.json()
+    //     console.log(addedCharacterJson)
+    // }
 
     render() {
         return (
@@ -53,7 +53,7 @@ class ShowCharacter extends Component {
                 {
                     this.state.comics.map((c,i) => 
                         <div key={i}>
-                            <p>{c.title} {this.props.currentUser && <button onClick={() => this.addCharacter(c)}>ADD</button>}</p>
+                            <p>{c.title} {this.props.currentUser && <button onClick={() => this.props.addCharacter(c)}>ADD</button>}</p>
                             
                             {(c.images.length > 0)
                                 && c.images.map(i =>
