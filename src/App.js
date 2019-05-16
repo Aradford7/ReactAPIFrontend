@@ -7,6 +7,7 @@ import ShowUser from './component/ShowUser/ShowUser'
 import ShowMarvel from './component/ShowMarvel/ShowMarvel'
 import Register from './component/Register/Register'
 import ShowCharacter from './component/ShowCharacter/ShowCharacter'
+import CreateFavorite from './component/Favorites/CreateFav'
 
 import * as routes from './constants/routes'
 import './App.css';
@@ -35,7 +36,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.currentUser)
     return (
       <div>
         <NavBar currentUser={this.state.currentUser}/>
@@ -45,7 +46,7 @@ class App extends Component {
           <Route exact path={`/character/:id`} render={() => <ShowCharacter currentUser={this.state.currentUser}/>} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser />} />
-          <Route exact path={routes.POSTS} render={() => <div>POST</div>} />
+          <Route exact path={routes.POSTS} render={() => <CreateFavorite/>} />
           <Route exact path={routes.REGISTER} render={() => <Register currentUser={this.state.currentUser} doSetCurrentUser={this.doSetCurrentUser}/>}/>} />
           <Route exact path={routes.LOGIN} render={() => <Login currentUser={this.state.currentUser} doSetCurrentUser={this.doSetCurrentUser}/>} />
           <Route render={() => <div>NOT FOUND</div>} />

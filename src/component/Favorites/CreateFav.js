@@ -1,11 +1,12 @@
-// import React, { Component } from 'react';
-// import { withRouter } from 'react-router-dom'
-
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
+//import ShowUser from './component/ShowUser/ShowUser'
 class CreateFavorite extends Component{
     constructor(){
         super();
 
         this.state = {
+            user:{},
             results:[{
                 id: Number,
                 name: String,
@@ -20,10 +21,17 @@ class CreateFavorite extends Component{
         this.setState({[e.currentTarget.name]:e.currentTarget.value})
     }
     render(){
+
         return(
-            <ShowFavorite/>
+            <div>
+              
+              {this.props.currentUser} 's Favorite Comics:
+          
+            </div>
         )
     }
 }
 
-// export default CreateFavorite;
+
+
+ export default CreateFavorite;
