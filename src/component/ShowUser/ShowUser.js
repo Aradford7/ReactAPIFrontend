@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import Cookies from 'universal-cookie';
-
+//import { NavLink } from 'react-router-dom'
+//import * as routes from './constants/routes'
 //const cookies = new Cookies();
 
 class ShowUser extends Component {
@@ -30,7 +31,12 @@ class ShowUser extends Component {
     return (
       <div>
         <h1>Welcome Back {this.state.user.username}!</h1>
-        <button>Browse</button>
+        {/* <NavLink exact to={routes.ROOT}>
+            <button type="button">
+                     Browse Comics!
+            </button>
+        </NavLink> */}
+        
         
       </div>
     )
