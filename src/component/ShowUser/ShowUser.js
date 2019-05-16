@@ -22,6 +22,7 @@ class ShowUser extends Component {
     }
   }
   render() {
+    console.log(this.state.user,"user/////")
     return (
       <div>
         <h1>{this.state.user.username}</h1>

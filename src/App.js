@@ -46,7 +46,7 @@ class App extends Component {
           <Route exact path={`/character/:id`} render={() => <ShowCharacter currentUser={this.state.currentUser}/>} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser />} />
-          <Route exact path={routes.POSTS} render={() => <CreateFavorite/>} />
+          <Route exact path={routes.POSTS} render={() => <CreateFavorite currentUser={this.state.currentUser}/>} />
           <Route exact path={routes.REGISTER} render={() => <Register currentUser={this.state.currentUser} doSetCurrentUser={this.doSetCurrentUser}/>}/>} />
           <Route exact path={routes.LOGIN} render={() => <Login currentUser={this.state.currentUser} doSetCurrentUser={this.doSetCurrentUser}/>} />
           <Route render={() => <div>NOT FOUND</div>} />

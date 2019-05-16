@@ -20,12 +20,13 @@ class CreateFavorite extends Component{
     updateFavorite = (e) => {
         this.setState({[e.currentTarget.name]:e.currentTarget.value})
     }
-    render(){
 
+    render(){
+//console.log(this.props.username)
         return(
             <div>
               
-              {this.props.currentUser} 's Favorite Comics:
+              {this.state.user.username} Favorite Comics:
           
             </div>
         )
