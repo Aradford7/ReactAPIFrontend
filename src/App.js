@@ -41,8 +41,8 @@ class App extends Component {
       <div>
         <NavBar currentUser={this.state.currentUser}/>
         <Switch>
-          <Route exact path={routes.ROOT} render={() => <div>ROOT</div>} />
-          <Route exact path={routes.HOME} render={(props) => <ShowMarvel props={props} characters={this.state.char} search={this.getChar}/>} />
+          <Route exact path={routes.ROOT} render={(props) => <ShowMarvel props={props} characters={this.state.char} search={this.getChar}/>} />
+          <Route exact path={routes.HOME} render={() => <div>HOME</div>}/>
           <Route exact path={`/character/:id`} render={() => <ShowCharacter currentUser={this.state.currentUser}/>} />
           <Route exact path={routes.USERS} render={() => <div>USER</div>} />
           <Route exact path={`${routes.USERS}/:id`} render={() => <ShowUser />} />

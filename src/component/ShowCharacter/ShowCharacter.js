@@ -32,6 +32,7 @@ class ShowCharacter extends Component {
         const comicObj = {
             title: comic.title,
             id: comic.id
+            
         }
         const addedCharacter = await fetch(`/users/${this.props.currentUser._id}/comic`, {
             method: 'POST',
