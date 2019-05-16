@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+//import Cookies from 'universal-cookie';
 //import ShowUser from './component/ShowUser/ShowUser'
+
+//const cookies = new Cookies();
+
 class CreateFavorite extends Component{
     constructor(){
         super();
@@ -23,9 +27,10 @@ class CreateFavorite extends Component{
 
     render(){
 //console.log(this.props.username)
+        //console.log(cookies.get('myFavorites'));
         return(
             <div>
-              
+      
               {this.state.user.username} Favorite Comics:
           
             </div>

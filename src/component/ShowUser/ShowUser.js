@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+//import Cookies from 'universal-cookie';
+
+
+//const cookies = new Cookies();
 
 
 class ShowUser extends Component {
@@ -22,7 +26,9 @@ class ShowUser extends Component {
     }
   }
   render() {
-    console.log(this.state.user,"user/////")
+
+    //console.log(this.state.user,"user/////")
+    //cookies.set('myFavorites', this.state.user, { path: '/' });
     return (
       <div>
         <h1>{this.state.user.username}</h1>
