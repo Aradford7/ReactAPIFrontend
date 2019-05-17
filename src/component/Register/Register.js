@@ -36,7 +36,7 @@ class Register extends Component {
         const {username, password} = this.state
         console.log(this.state)
         return(
-            <div>
+            <div class ="container" style={{'Width': '50px', 'marginLeft': 'center'}}>
                 {
                     this.state.logged
                     ?<Redirect to={`/users/${this.props.currentUser._id}`}/>

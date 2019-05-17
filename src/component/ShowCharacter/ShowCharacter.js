@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
+import './ShowCharacter.css'
 
 class ShowCharacter extends Component {
 
@@ -49,7 +50,7 @@ class ShowCharacter extends Component {
 
     render() {
         return (
-            <div>
+            <div class = "has-text-danger">
                 {
                     this.state.comics.map((c,i) => 
                         <div key={i}>
