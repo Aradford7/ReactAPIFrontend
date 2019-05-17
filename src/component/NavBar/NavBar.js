@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -52,4 +53,8 @@ const NavBar = ({currentUser}) =>
     </div>
     </div>
 </nav>
-export default NavBar   
+
+
+
+export default NavBar 
+
