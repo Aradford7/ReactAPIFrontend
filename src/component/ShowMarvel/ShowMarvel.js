@@ -78,7 +78,7 @@ class ShowMarvel extends Component {
                 <a href="https://jgthms.com">by AshR</a>  Made with React/Express/MongoDB.  View code here
                 <a href="">  Github Link</a>.
                 The website API content
-                is licensed by Marvel<a href="https://developer.marvel.com/"> Disclaimer: Marvel Please dont sue me
+                is licensed by Marvel<a href="https://developer.marvel.com/"> Disclaimer: No Advertising/Sponsership Marvel Please dont sue me
                 </a>.
               </p>
             </div>
