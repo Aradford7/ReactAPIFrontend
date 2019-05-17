@@ -64,7 +64,7 @@ class ShowMarvel extends Component {
     console.log(this.props)
       return (
       <div>
-        <div>
+        <div class ="container">
           <SearchName getCharacter={this.props.search} />
           <MarvelList characters={this.props.characters}/>
          </div>
