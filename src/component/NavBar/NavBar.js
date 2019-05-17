@@ -53,4 +53,6 @@ const NavBar = ({currentUser}) =>
     </div>
     </div>
 </nav>
+
+
 export default NavBar 
