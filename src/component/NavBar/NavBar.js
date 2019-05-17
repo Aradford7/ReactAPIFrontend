@@ -55,4 +55,6 @@ const NavBar = ({currentUser}) =>
 </nav>
 
 
+
 export default NavBar 
+
