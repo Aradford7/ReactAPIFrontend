@@ -8,7 +8,7 @@ import './NavBar.css'
 const NavBar = ({currentUser}) =>
   <nav class = "navbar is-black"role="navigation" aria-label="main navigation">
     <div class='navbar-brand'>
-        <a class = "navbar-item" href = "">
+        <a class = "navbar-item" href = "https://www.marvel.com/">
         <img src = "https://i.imgur.com/Hia1gm5.png" width = "112" height="28"></img>
         </a>
 

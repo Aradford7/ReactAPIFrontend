@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
+import './SearchBar.css'
 
 class SearchName extends Component{
     state = {
-        char: 'spider_man',
+        char: '',
         search:''
         
     }
@@ -17,11 +18,17 @@ class SearchName extends Component{
     render(){
         const {char} = this.state
         return(
-            <div>
+            <div className = "searchContainer" class ="columns ">
+                <div class = "column is-half is-center">
+                <div class = "field">
+                <div class = "control">
                 <form onSubmit = {this.handleSubmit}>
-                    <input type = 'text' name = 'char' value = {char} onChange = {this.handleChange}/>
-                    <button type = "submit">Submit</button>
+                    <input class = "input is-rounded is-large" type = 'text' name = 'char' placeholder ="Search" value = {char} onChange = {this.handleChange}/>
+                    <button type = "submit">SEARCH</button>
                 </form>
+                </div>
+                </div>
+                </div>
             </div>
         )
     }
